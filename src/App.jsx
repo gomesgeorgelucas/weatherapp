@@ -34,13 +34,14 @@ function App() {
               <p>{weather.description}</p>
               <section className="forecast">
                 <h2>Forecast</h2>
-
-                {weather.forecast.map((day) => (
-                  <li>
-                    <p>{day.temperature}</p>
-                    <p>{day.wind}</p>
-                  </li>
-                ))}
+                <ol>
+                  {weather.forecast.map((day) => (
+                    <li>
+                      <p>{day.temperature}</p>
+                      <p>{day.wind}</p>
+                    </li>
+                  ))}
+                </ol>
               </section>
             </section>
           </main>
