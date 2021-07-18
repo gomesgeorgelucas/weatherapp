@@ -2,7 +2,7 @@
 
 # Como evoluir a aplicação
 
-- [] Input de texto para pesquisar cidade
+- [x] Input de texto para pesquisar cidade
 - [] Possibilitar a usuário armazenar cidades preferidas/padrão
 - [] Melhorar interface para web
 - [] Hospedar aplicação no Netlify

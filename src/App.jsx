@@ -5,25 +5,33 @@ import { FaTemperatureHigh, FaWind } from "react-icons/fa";
 
 function App() {
   const [weather, setWeather] = useState(null);
-  const city = "Amazonas";
+  const [city, setCity] = useState("");
+  const [search, setSearch] = useState("");
 
-  async function handleGetWeather() {
-    const response = await weatherApi.get(city);
+  async function handleGetWeather(evt) {
+    evt.preventDefault();
+    const response = await weatherApi.get(search);
+    setCity(search);
     console.log(response.data);
     setWeather(response.data);
   }
 
   useEffect(() => {
-    handleGetWeather();
+    //handleGetWeather();
   });
   return (
     <React.Fragment>
       <div className="App">
-        {/*
-             <header>
-                <button onClick={handleGetWeather}>Enviar</button>
-            </header>
-         */}
+        <header>
+          <form onSubmit={handleGetWeather}>
+            <input
+              type="text"
+              value={search}
+              onChange={(evt) => setSearch(evt.target.value)}
+            />
+            <button>Enviar</button>
+          </form>
+        </header>
         {weather && (
           <main>
             {/* <p>{JSON.stringify(weather)}</p> */}
