@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import HelloWorld from "./components/HelloWorld";
 import { weatherApi } from "./services/weatherApi";
+import { FaTemperatureHigh, FaWind } from "react-icons/fa";
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -37,8 +37,14 @@ function App() {
                 <ol>
                   {weather.forecast.map((day) => (
                     <li>
-                      <p>{day.temperature}</p>
-                      <p>{day.wind}</p>
+                      <div>
+                        <FaTemperatureHigh />
+                        <p>{day.temperature}</p>
+                      </div>
+                      <div>
+                        <FaWind />
+                        <p>{day.wind}</p>
+                      </div>
                     </li>
                   ))}
                 </ol>
